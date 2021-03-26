@@ -1,0 +1,40 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}{{ news.name }}{% endblock %}
+
+{% block content %}
+
+<section class="single-blog-area">
+            <div class="container">
+                <div class="row">
+                   <div class="col-md-12">
+                    <div class="border-top">
+                        <div class="col-md-8">
+                        <div class="blog-area">
+                            <div class="blog-area-part">
+                                <h2>{{ news.name }}</h2>
+                                <h4>Category: {{ news.category }}</h4>
+
+                                {% if news.tags.exists %}
+                                    <h4>
+                                        Tags:
+                                        {% for tag in news.tags.all %}
+                                        {{ tag.name }}
+                                        {% endfor %}
+                                    </h4>
+                                {% endif %}
+                                <div class="single-content">
+                                    {{ news.details|safe }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+{% endblock %}
