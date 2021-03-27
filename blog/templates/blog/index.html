@@ -12,7 +12,7 @@
                     <div class="border-top">
                         <div class="blog-post-area-style">
                             {% for item in news %}
-                                <div class="col-md-3">
+{#                                <div class="col-md-3">#}
                                     <div class="single-post">
                                         <h3><a href="{{ item.get_absolute_url }}">{{ item.name }}</a></h3>
                                         <h4><span>By: <span class="author-name">{{ item.author }}</span></span>
@@ -20,7 +20,7 @@
                                         {{ item.details|truncatewords_html:30 }}
                                         <h4><span>{{ item.date}}</span></h4>
                                     </div>
-                                </div>
+{#                                </div>#}
                             {% endfor %}
                         </div>
                     </div>
